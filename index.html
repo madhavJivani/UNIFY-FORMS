@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Unify Apps - Form Assignment</title>
+</head>
+
+<body>
+    <main>
+        <h1 class="text-3xl font-bold underline mb-8 text-center">
+            Unify Apps - User Form
+        </h1>
+        <form id="userForm" class="max-w-lg mx-auto bg-white p-8 rounded shadow space-y-6" autocomplete="on">
+            <div>
+                <label class="block mb-1 font-semibold" for="name">Name</label>
+                <input type="text" id="name" name="name" class="w-full border rounded px-3 py-2" required
+                    autocomplete="name" aria-required="true" />
+            </div>
+            <div>
+                <label class="block mb-1 font-semibold" for="age">Age</label>
+                <input type="number" id="age" name="age" class="w-full border rounded px-3 py-2" required min="1"
+                    max="150" autocomplete="bday" aria-required="true" />
+            </div>
+            <fieldset class="border-0 p-0">
+                <legend class="block mb-1 font-semibold">Gender</legend>
+                <div class="flex gap-4">
+                    <label for="gender-male"><input type="radio" id="gender-male" name="gender" value="Male" required
+                            aria-required="true" /> Male</label>
+                    <label for="gender-female"><input type="radio" id="gender-female" name="gender" value="Female"
+                            aria-required="true" /> Female</label>
+                    <label for="gender-other"><input type="radio" id="gender-other" name="gender" value="Other"
+                            aria-required="true" /> Other</label>
+                </div>
+            </fieldset>
+            <div>
+                <label class="block mb-1 font-semibold" for="country">Country</label>
+                <select id="country" name="country" class="w-full border rounded px-3 py-2" required
+                    autocomplete="country" aria-required="true">
+                    <option value="">Select Country</option>
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="Japan">Japan</option>
+                    <option value="China">China</option>
+                </select>
+            </div>
+            <fieldset class="border-0 p-0">
+                <legend class="block mb-1 font-semibold">Technological Stack</legend>
+                <div class="flex flex-wrap gap-4">
+                    <label for="tech-html"><input type="checkbox" id="tech-html" name="techStack" value="HTML"
+                            aria-required="true" /> HTML</label>
+                    <label for="tech-css"><input type="checkbox" id="tech-css" name="techStack" value="CSS"
+                            aria-required="true" /> CSS</label>
+                    <label for="tech-js"><input type="checkbox" id="tech-js" name="techStack" value="JS"
+                            aria-required="true" /> JS</label>
+                    <label for="tech-react"><input type="checkbox" id="tech-react" name="techStack" value="React"
+                            aria-required="true" /> React</label>
+                    <label for="tech-reactnative"><input type="checkbox" id="tech-reactnative" name="techStack"
+                            value="React Native" aria-required="true" /> React Native</label>
+                </div>
+            </fieldset>
+            <div>
+                <label class="block mb-1 font-semibold" for="address">Address</label>
+                <textarea id="address" name="address" class="w-full border rounded px-3 py-2" rows="3" required
+                    autocomplete="street-address" aria-required="true"></textarea>
+            </div>
+            <div>
+                <label class="block mb-1 font-semibold" for="telephone">Telephone</label>
+                <input type="tel" id="telephone" name="telephone" class="w-full border rounded px-3 py-2" required
+                    pattern="[0-9]{7,15}" minlength="7" maxlength="15" autocomplete="tel" inputmode="numeric"
+                    aria-required="true" />
+            </div>
+            <div>
+                <label class="block mb-1 font-semibold" for="email">Email</label>
+                <input type="email" id="email" name="email" class="w-full border rounded px-3 py-2" required
+                    autocomplete="email" aria-required="true" />
+            </div>
+            <div class="flex justify-between gap-4">
+                <button type="reset"
+                    class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded">Reset</button>
+                <button type="submit"
+                    class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Submit</button>
+            </div>
+            <div id="formError" class="text-red-600 font-semibold" aria-live="polite"></div>
+        </form>
+        <div id="resultTable" class="max-w-2xl mx-auto mt-8"></div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
